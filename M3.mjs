@@ -4,7 +4,7 @@ const userInput = readline.createInterface({input, output});
 
 let starttop = false;
 let startleft = false;
-let height = 10;
+let height = 9;
 
 function duplicate_string(amount, type) {
     let line = ""
@@ -17,24 +17,24 @@ function duplicate_string(amount, type) {
 if (starttop) {
     if (startleft){
         for (let i = 1; i <= height; i++) {
-            console.log(duplicate_string(i, "*"));
+            console.log(duplicate_string(i, i));
         }
     } 
     else {
         for (let i = height; i >= 1; i--) {
-            console.log(duplicate_string((i- 1), " ") + duplicate_string(((height - i) + 1), "*"));
+            console.log(duplicate_string((i- 1), " ") + duplicate_string(((height - i) + 1), ((height - i) + 1)));
         }
     }
 }
 else {
     if (startleft) {
         for (let i = height; i >= 1; i--) {
-            console.log(duplicate_string(i, "*"));
+            console.log(duplicate_string(i, i));
         }
     }
     else {
         for (let i = height; i >= 1; i--) {
-            console.log(duplicate_string((height - i), " ") + (duplicate_string(i, "*")));
+            console.log(duplicate_string((height - i), " ") + (duplicate_string(i, i)));
         }
     }
 }
